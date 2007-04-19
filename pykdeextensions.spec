@@ -5,7 +5,7 @@ Summary:	Collection of software and Python packages to support the creation and 
 Summary(pl.UTF-8):	Zbiór oprogramowania i pakietów Pythona wspierających tworzenie i instalacje aplikacji KDE.
 Name:		pykdeextensions
 Version:	0.4.0
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://www.simonzone.com/software/pykdeextensions/%{name}-%{version}.tar.gz
@@ -13,9 +13,12 @@ Source0:	http://www.simonzone.com/software/pykdeextensions/%{name}-%{version}.ta
 URL:		http://www.simonzone.com/software/pykdeextensions/#introduction
 BuildRequires:	python-devel
 BuildRequires:	python-modules >= 2.2.1
+BuildRequires:	python-PyKDE
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
+
 %pyrequires_eq	python-modules
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
