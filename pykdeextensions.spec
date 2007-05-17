@@ -42,9 +42,6 @@ python setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
-# install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-# install examples/pylintrc $RPM_BUILD_ROOT%{_sysconfdir}/pylintrc
-
 %py_postclean
 
 %clean
@@ -57,7 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-#%{py_scriptdir}/site-packages/*.py[co]
 %{py_sitescriptdir}/*.py[co]
 # app_templates -> examples / docs ?
 %{_datadir}/apps/%{name}
@@ -72,10 +68,3 @@ rm -rf $RPM_BUILD_ROOT
 #%files static
 #%defattr(644,root,root,755)
 %{_libdir}/lib*.a
-
-#%doc ChangeLog TODO README examples/* doc/*.txt
-#%attr(755,root,root) %{_bindir}/pylint
-#%attr(755,root,root) %{_bindir}/symilar
-#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pylintrc
-#%{py_sitescriptdir}/*
-#%{_mandir}/man1/*
